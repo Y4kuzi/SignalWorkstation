@@ -41,7 +41,7 @@ class SignalDaemon(threading.Thread):
         # Retrieve current flags.
         flags = fcntl(self.signal_process.stdout, F_GETFL)
 
-        # Append os.O_NONBLOCK to flagas.
+        # Append os.O_NONBLOCK to flags.
         fcntl(self.signal_process.stdout, F_SETFL, flags | os.O_NONBLOCK)
 
         self.listener = SignalListener()
